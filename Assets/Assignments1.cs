@@ -5,7 +5,9 @@ using UnityEngine;
 public class Assignments1 : ProcessingLite.GP21
 
 {
-   
+    public Vector2 circlePosition;
+    float diameter = 2;
+
 
     // Update is called once per frame
     void Update()
@@ -16,10 +18,11 @@ public class Assignments1 : ProcessingLite.GP21
         LetterK();
         LetterA();
         LetterN();
+        Circle(circlePosition.x, circlePosition.y, diameter);
+    }
 
-        }
-
-        void LetterF()
+    
+    void LetterF()
         {
             Line(1, 1, 1, 6);
             Line(1, 6, 3, 6);
