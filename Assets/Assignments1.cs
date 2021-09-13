@@ -7,9 +7,9 @@ public class Assignments1 : ProcessingLite.GP21
 {
     public Vector2 circlePosition;
     float diameter = 2;
+    public Vector2 squarePostion;
+    
 
-
-    // Update is called once per frame
     void Update()
     {
         LetterF();
@@ -18,7 +18,9 @@ public class Assignments1 : ProcessingLite.GP21
         LetterK();
         LetterA();
         LetterN();
+       
         Circle(circlePosition.x, circlePosition.y, diameter);
+        Square(squarePostion.x, squarePostion.y, diameter);
     }
 
     
@@ -66,4 +68,5 @@ public class Assignments1 : ProcessingLite.GP21
         
         }
     
+        
 }
