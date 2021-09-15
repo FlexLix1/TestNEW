@@ -5,12 +5,9 @@ using UnityEngine;
 public class Assignments1 : ProcessingLite.GP21
 
 {
-    
-
     public Vector2 circlePosition;
     int diameter = 2;
     public Vector2 squarePostion;
-    
 
     void Update()
     {
@@ -22,7 +19,6 @@ public class Assignments1 : ProcessingLite.GP21
         LetterN();
         Circle();
         Square();
-
     }
 
     
@@ -63,16 +59,16 @@ public class Assignments1 : ProcessingLite.GP21
 
          void LetterN()
          {
-
             Line(12, 1, 12, 3);
             Line(12, 3, 13, 3);
             Line(13, 1, 13, 3);
-        
          }
         void Circle()
         {
-        Circle(circlePosition.x, circlePosition.y, diameter);
-        Fill(0, 204, 204);
+
+         Circle(circlePosition.x, circlePosition.y, diameter);
+         Fill(0, 204, 204);
+
         }
 
         void Square()
