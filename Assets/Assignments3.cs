@@ -35,11 +35,11 @@ public class Assignments3 : ProcessingLite.GP21
 
         if (!Input.GetMouseButton(0))
         {
-            if (circlePosition.x >= 13 ||  circlePosition.x <= 1)
+            if (circlePosition.x >= 12 ||  circlePosition.x <= 1)
             {
                 offset *= -1;
             }
-            if(circlePosition.y >= 13 || circlePosition.y <=1)
+            if(circlePosition.y >= 12 || circlePosition.y <=1)
             {
                 offset *= -1;
             }
