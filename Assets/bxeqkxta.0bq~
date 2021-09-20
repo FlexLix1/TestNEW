@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Assignment4 : ProcessingLite.GP21
+{
+    float speed = 5f;
+    public Vector2 Charpos1, Charpos2;
+    float diameter = 2;
+    float acceleration = 1;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Charpos1.x = Width / 2;
+        Charpos2.y = Height / 1.5f;
+
+        Charpos2.x = Width / 2;
+        Charpos2.y = Height / 3;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Background(0);
+
+
+
+        Circle(Charpos1.x, Charpos1.y, diameter);
+        Circle(Charpos2.x, Charpos2.y, diameter);
+
+        Charpos1.x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        Charpos1.y = Input.GetAxis("Vertical") * Time.deltaTime * speed;
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            Charpos2.x += speed * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            Charpos2.x -= speed * Time.deltaTime;
+        }
+
+        if(Input.GetKey(KeyCode.W))
+        {
+            Charpos2.y += speed * Time.deltaTime;
+        }
+
+        if(Input.GetKey(KeyCode.S))
+        {
+            Charpos2.y -= speed * Time.deltaTime;
+        }
+
+    }
+
+
+
+
+
+
+}
