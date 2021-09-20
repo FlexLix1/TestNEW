@@ -74,6 +74,47 @@ public class Assignment4 : ProcessingLite.GP21
             }
         }
 
+        if (Charpos2.x < -2)
+        {
+            Charpos2.x = Width;
+        }
+
+        if (Charpos2.x > Width)
+        {
+            Charpos2.x = -2;
+        }
+
+        if (Charpos2.y > Height)
+        {
+            Charpos2.y = 0;
+        }
+
+
+        if(Charpos2.y < 0)
+        {
+            Charpos2.y = Height;
+        }
+        if (Charpos1.x < -2)
+        {
+            Charpos1.x = Width;
+        }
+
+        if (Charpos1.x > Width)
+        {
+            Charpos1.x = -2;
+        }
+
+        if (Charpos1.y > Height)
+        {
+            Charpos1.y = 0;
+        }
+
+
+        if(Charpos1.y < 0)
+        {
+            Charpos1.y = Height;
+        }
+
         Circle(Charpos1.x, Charpos1.y, diameter);
         Circle(Charpos2.x, Charpos2.y, diameter);
 
