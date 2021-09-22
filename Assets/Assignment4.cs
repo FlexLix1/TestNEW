@@ -10,6 +10,8 @@ public class Assignment4 : ProcessingLite.GP21
     public Vector2 acceleration = new Vector2(0, 0);
     float AccelerationSpeed = 0.2f;
     float AccelerationDecrease = 0.2f;
+    public float gravity = 9.82f;
+    bool gravitySwitch = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,45 @@ public class Assignment4 : ProcessingLite.GP21
     void Update()
     {
         Background(0);
+        Gravity();
+
+        void Gravity()
+        {
+            if(Input.GetKeyUp(KeyCode.G))
+            {
+                if(gravitySwitch == false)
+                {
+                    gravitySwitch = true;
+                }
+                else
+                {
+                    gravitySwitch = false;
+                }
+            }
+        }
+        if(gravitySwitch == true)
+        {
+            if((Charpos1.y - diameter) >= 0.1f)
+            {
+                Charpos1.y -= gravity * Time.deltaTime;
+            }
+            else
+            {
+                Charpos1.y = 0.1f + diameter;
+            }
+        }
+
+        if(gravitySwitch == true)
+        {
+            if((Charpos2.y - diameter) >= 0.1f)
+            {
+                Charpos2.y -= gravity * Time.deltaTime;
+            }
+            else
+            {
+                Charpos2.y = 0.1f + diameter;
+            }
+        }
 
         Charpos1.x = Charpos1.x + Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         Charpos1.y = Charpos1.y + Input.GetAxis("Vertical") * Time.deltaTime * speed;
@@ -89,7 +130,6 @@ public class Assignment4 : ProcessingLite.GP21
             Charpos2.y = 0;
         }
 
-
         if(Charpos2.y < 0)
         {
             Charpos2.y = Height;
@@ -109,10 +149,14 @@ public class Assignment4 : ProcessingLite.GP21
             Charpos1.y = 0;
         }
 
-
         if(Charpos1.y < 0)
         {
             Charpos1.y = Height;
+        }
+
+        if (acceleration.magnitude > 0.2f)
+        {
+            acceleration = acceleration.normalized * 0.2f;
         }
 
         Circle(Charpos1.x, Charpos1.y, diameter);
@@ -121,10 +165,4 @@ public class Assignment4 : ProcessingLite.GP21
         Debug.Log("1:" + Charpos1);
         Debug.Log("2:" + Charpos2);
     }
-
-
-
-
-
-
 }
