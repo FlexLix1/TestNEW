@@ -159,9 +159,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674b4cde36e35f7428867baeee918dc2, type: 3}
+  m_Script: {fileID: 11500000, guid: d4278add09e769a4e9ef60589a7b3200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfColums: 20
+  numberOfRows: 20
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
